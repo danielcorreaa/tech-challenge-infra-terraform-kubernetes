@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-tech-challenge
-        image: daniel36/techchallenge-1:1.0
+        image: daniel36/techchallenge:1.4
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
@@ -29,8 +29,8 @@ spec:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
-              key: mysql-user-password
+              name: mysql-user-password
+              key: DB_PASSWORD
         - name: DB_SERVER
           valueFrom:
             configMapKeyRef:
@@ -39,10 +39,10 @@ spec:
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name:  mysql-config-map
-              key: mysql-database-name
+              name: mysql-database-name
+              key: DB_NAME
         - name: DB_USERNAME
           valueFrom:
             configMapKeyRef:
-              name: mysql-config-map
-              key: mysql-user-username
+              name: mysql-user-username
+              key: DB_USERNAME

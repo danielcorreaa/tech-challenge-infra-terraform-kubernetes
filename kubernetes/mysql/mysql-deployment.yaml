@@ -20,23 +20,25 @@ spec:
         - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
-              name: mysql-config-map
-              key: mysql-database-name
+              name: mysql-database-name
+              key: MYSQL_DATABASE
+
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
-              key: mysql-root-password
+              name: mysql-root-password
+              key: MYSQL_ROOT_PASSWORD
+
         - name: MYSQL_USER
           valueFrom:
             configMapKeyRef:
-              name: mysql-config-map
-              key: mysql-user-username
+              name: mysql-user-username
+              key: MYSQL_USER
         - name: MYSQL_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-pass
-              key: mysql-user-password
+              name: mysql-user-password
+              key: MYSQL_PASSWORD
         ports:
         - containerPort: 3306
           name: mysql
