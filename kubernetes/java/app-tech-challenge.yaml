@@ -29,7 +29,7 @@ spec:
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-user-password
+              name: db-password
               key: DB_PASSWORD
         - name: DB_SERVER
           valueFrom:
@@ -39,10 +39,10 @@ spec:
         - name: DB_NAME
           valueFrom:
             configMapKeyRef:
-              name: mysql-database-name
+              name: db-name
               key: DB_NAME
         - name: DB_USERNAME
           valueFrom:
             configMapKeyRef:
-              name: mysql-user-username
+              name: mysql-user
               key: DB_USERNAME
