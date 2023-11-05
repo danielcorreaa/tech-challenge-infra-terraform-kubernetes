@@ -19,7 +19,7 @@ spec:
         env:
         - name: MYSQL_DATABASE
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: mysql-database-name
               key: MYSQL_DATABASE
 
@@ -31,7 +31,7 @@ spec:
 
         - name: MYSQL_USER
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: mysql-user-username
               key: MYSQL_USER
         - name: MYSQL_PASSWORD

@@ -31,18 +31,21 @@ spec:
             secretKeyRef:
               name: db-password
               key: DB_PASSWORD
+
         - name: DB_SERVER
           valueFrom:
             configMapKeyRef:
               name:  mysql-config-map
               key: mysql-server
+
         - name: DB_NAME
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: db-name
               key: DB_NAME
+
         - name: DB_USERNAME
           valueFrom:
-            configMapKeyRef:
+            secretKeyRef:
               name: mysql-user
               key: DB_USERNAME
