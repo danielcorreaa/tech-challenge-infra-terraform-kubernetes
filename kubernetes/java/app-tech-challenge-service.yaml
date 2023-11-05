@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-tech-challenge
+  labels:
+    app: app-tech-challenge
+spec:
+  type: LoadBalancer
+  selector:
+    app: app-tech-challenge
+  ports:
+  - protocol: TCP
+    name: http
+    port: 8080
+    targetPort: 8080
+    nodePort: 30002
