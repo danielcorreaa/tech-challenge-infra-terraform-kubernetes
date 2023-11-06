@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app-tech-challenge
-  namespace: staging
   labels:
     app: app-tech-challenge
 spec:
