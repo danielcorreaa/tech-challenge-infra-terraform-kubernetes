@@ -16,7 +16,7 @@ spec:
         app: app-tech-challenge
     spec:
       containers:
-      - name: app-tech-challenge
+      - name: app
         image: daniel36/techchallenge:1.4
         imagePullPolicy: IfNotPresent
         ports:
