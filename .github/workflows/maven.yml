@@ -1,0 +1,29 @@
+name: 'Terraform'
+
+on:
+  push:
+    branches: [ "develop", "release", "main" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  EKS:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: configurando credenciais da AWS
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.ID_CHAVE_ACESSO }}
+        aws-secret-access-key: ${{ secrets.CHAVE_SECRETA }}
+        aws-region: us-east-1
+
+      
+    - run: terraform -chdir=env/develop init
+    - run: terraform -chdir=env/develop apply -auto-approve
+    
+  
+   # - run: terraform -chdir=env/develop destroy -auto-approve
