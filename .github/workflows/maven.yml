@@ -22,7 +22,7 @@ jobs:
         aws-region: us-east-1
 
       
-   # - run: terraform -chdir=env/develop init
+    - run: terraform -chdir=env/develop init
    # - run: terraform -chdir=env/develop apply -auto-approve
     
   
