@@ -35,11 +35,7 @@ jobs:
   
     - run: aws eks update-kubeconfig --region us-east-1 --name dev
   
-    - run: kubectl get svc
-  
-    - run: helm repo add bitnami https://charts.bitnami.com/bitnami
-
-    - run: helm install my-kafka bitnami/kafka --version 26.8.0
+    - run: kubectl get svc 
     
     - run: kubectl apply -f ..\..\kubernetes/mysql/mysql-secrets.yaml 
     - run: kubectl apply -f ..\..\kubernetes/mysql/mysql-configmap.yaml 
