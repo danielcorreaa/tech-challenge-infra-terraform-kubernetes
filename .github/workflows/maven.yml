@@ -12,7 +12,7 @@ jobs:
 
   EKS-Dev: 
      if: github.ref == 'refs/heads/main'  
-     uses: ./.github/workflows/develop/terraform-dev.yml    
+     uses: .github/workflows/develop/terraform-dev.yml    
      secrets: inherit
 
   #destroy-Dev:   
