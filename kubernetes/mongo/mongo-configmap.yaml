@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-config-map
+data:
+  mongo-host: mongo-db  
+  mongo-username: "root"

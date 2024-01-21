@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zookeeper-deploy
+  labels:
+    app: zookeeper-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zookeeper-1
+  template:
+    metadata:
+      labels:
+        app: zookeeper-1
+    spec:
+      containers:
+      - name: zoo1
+        image: wurstmeister/zookeeper:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - name: http
+            containerPort: 2181
+        resources:
+          limits:
+            cpu: "0.2"
+            memory: "512Mi"        
+          
+     
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: zoo1
+  labels:
+    app: zookeeper-1
+spec:  
+  selector:
+    app: zookeeper-1
+  ports:
+  - protocol: TCP
+    name: client
+    port: 2181
+
+  - protocol: TCP
+    name: follower
+    port: 2888
+
+  - protocol: TCP
+    name: leader
+    port: 3888   
