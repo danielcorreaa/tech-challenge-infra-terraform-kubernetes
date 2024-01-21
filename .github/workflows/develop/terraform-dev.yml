@@ -52,11 +52,6 @@ jobs:
     - run: kubectl apply -f ..\..\kubernetes/kafka/kafka-deployment.yaml
     - run: kubectl apply -f ..\..\kubernetes/kafka/kafka-service.yaml
     - run: kubectl apply -f ..\..\kubernetes/kafka/kafka-ui-deployment.yaml
-    - run: terraform -chdir=env/develop apply -auto-approve
-    
-  
-     
 
-      #- run: terraform -chdir=env/develop destroy -auto-approve  
 
       
