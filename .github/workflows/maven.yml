@@ -25,5 +25,6 @@ jobs:
       uses: hashicorp/setup-terraform@v2.0.3
 
     - run: terraform -chdir=env/develop init
+    
   
     - run: terraform -chdir=env/develop destroy -auto-approve
