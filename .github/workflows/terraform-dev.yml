@@ -20,7 +20,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2.0.3
      
     - run: terraform -chdir=env/develop init
-      if: github.ref == 'refs/heads/mai
+      if: github.ref == 'refs/heads/main
     - run: terraform -chdir=env/develop apply -auto-approve
 
 
