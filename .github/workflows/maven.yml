@@ -9,10 +9,10 @@ permissions:
   contents: read
 
 jobs:
-  EKS-Dev:   
-     needs: docker-pull-image 
+
+  EKS-Dev: 
      if: github.ref == 'refs/heads/main'  
-     uses: develop/terraform-dev.yml    
+     uses: ./.github/workflows/develop/terraform-dev.yml    
      secrets: inherit
 
   #destroy-Dev:   
@@ -21,4 +21,4 @@ jobs:
     # uses: destroy/terraform-destroy.yml    
     # secrets: inherit
   
-    
+
