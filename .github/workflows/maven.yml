@@ -4,7 +4,8 @@ on:
   push:
     branches: ["main"]
   pull_request:
-
+    branches: ["main"]
+    
 permissions:
   contents: read
 
@@ -12,7 +13,7 @@ jobs:
 
   EKS-Dev: 
      if: github.ref == 'refs/heads/main'  
-     uses: ./.github/workflows/terraform-dev.yml    
+     uses: ./.github/workflows/terraform-dev.yml 
      secrets: inherit
 
   #destroy-Dev:   
