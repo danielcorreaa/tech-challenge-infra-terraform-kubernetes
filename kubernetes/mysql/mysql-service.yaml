@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: mysql
 spec:
+  type: LoadBalancer
   ports:
   - protocol: TCP
     name: http
@@ -11,4 +12,4 @@ spec:
     nodePort: 30001
   selector:
     app: mysql
-  type: NodePort
+ 

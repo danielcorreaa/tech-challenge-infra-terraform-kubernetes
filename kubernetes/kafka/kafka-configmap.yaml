@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: kafka-config-map
 data:
-  kafka-servers: my-kafka:9092
+  kafka-servers: kafka:9092
