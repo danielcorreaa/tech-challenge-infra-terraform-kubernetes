@@ -23,7 +23,6 @@ jobs:
       if: github.ref == 'refs/heads/main'
     - run: terraform -chdir=env/develop apply -auto-approve
 
-
     - name: Kubectl tool installer
       uses: Azure/setup-kubectl@v3
     

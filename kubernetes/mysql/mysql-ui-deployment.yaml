@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kafka-ui
+  name: adminer
   labels:
-    app: kafka-ui
+    app: adminer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kafka-ui
+      app: adminer
   template:
     metadata:
       labels:
-        app: kafka-ui
+        app: adminer
     spec:
       containers:
-      - name: kafka-ui
-        image: provectuslabs/kafka-ui
+      - name: adminer
+        image: adminer:4.6.3
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
@@ -26,30 +26,23 @@ spec:
             cpu: "0.2"
             memory: "512Mi"
         env:
-        - name: KAFKA_CLUSTERS_0_NAME
-          value: Tech-Challenge
-               
-        - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-          value: kafka:9092  
-
-        - name: KAFKA_CLUSTERS_0_ZOOKEEPER
-          value: zoo1:2181
+          - name: ADMINER_DESIGN
+            value: "pappu687"
           
-     
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: kafka-ui
+  name: adminer
   labels:
-    app: kafka-ui
+    app: adminer
 spec:
   type: LoadBalancer
   selector:
-    app: kafka-ui
+    app: adminer
   ports:
   - protocol: TCP
     name: http
     port: 8080
     targetPort: 8080
-    nodePort: 30009
+    nodePort: 30005

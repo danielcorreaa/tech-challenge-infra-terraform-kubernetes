@@ -28,7 +28,7 @@ spec:
                 secretKeyRef:
                   name: mongo-secret
                   key: mongo-password
-            - name: MONGO_INITDB_DATABASE
+            - name: cd 
               value: tech-challenge-product
           ports:
             - containerPort: 27017
@@ -36,7 +36,8 @@ spec:
           volumeMounts:
             - name: mongodb-persistent-storage
               mountPath: /data/db
+      
       volumes:
         - name: mongodb-persistent-storage
           persistentVolumeClaim:
-            claimName: mongodb-pvc
+            claimName: mongo-pv-claim
