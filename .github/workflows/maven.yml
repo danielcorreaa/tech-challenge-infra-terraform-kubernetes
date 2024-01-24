@@ -11,15 +11,15 @@ permissions:
 
 jobs:
 
-  EKS-Dev: 
-     if: github.ref == 'refs/heads/main'
-     uses: ./.github/workflows/terraform-dev.yml
-     secrets: inherit
+  #EKS-Dev: 
+   #  if: github.ref == 'refs/heads/main'
+    # uses: ./.github/workflows/terraform-dev.yml
+     #secrets: inherit
 
-  #destroy-Dev:   
-    # needs: docker-pull-image 
-    # if: github.ref == 'refs/heads/main'  
-    # uses: destroy/terraform-destroy.yml    
-    # secrets: inherit
+  destroy-Dev:  
+    
+     if: github.ref == 'refs/heads/main'  
+     uses: ./.github/workflows/terraform-destroy.yml    
+     secrets: inherit
   
 
