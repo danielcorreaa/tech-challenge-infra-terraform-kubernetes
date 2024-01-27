@@ -30,7 +30,7 @@ spec:
           value: Tech-Challenge
                
         - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-          value: kafka:9092  
+          value: kafka-service:l  
 
         - name: KAFKA_CLUSTERS_0_ZOOKEEPER
           value: zoo1:2181
