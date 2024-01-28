@@ -13,14 +13,13 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.ID_CHAVE_ACESSO }}
         aws-secret-access-key: ${{ secrets.CHAVE_SECRETA }}
-        aws-region: us-east-1     
-    
+        aws-region: us-east-1    
 
     - name: HashiCorp - Setup Terraform
       uses: hashicorp/setup-terraform@v2.0.3
-      if: github.ref == 'refs/heads/main'
-    - run: terraform -chdir=env/develop init    
-    - run: terraform -chdir=env/develop apply -auto-approve
+      if: github.ref == 'refs/heads/main'      
+    - run: terraform -chdir=env/prod init    
+    - run: terraform -chdir=env/prod apply -auto-approve
 
     - name: Kubectl tool installer
       uses: Azure/setup-kubectl@v3

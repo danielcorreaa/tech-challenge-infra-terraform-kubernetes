@@ -31,6 +31,7 @@ jobs:
   
     - run: kubectl get svc
     
+    - run: kubectl apply -f kubernetes/metrics.yaml 
     - run: kubectl apply -f kubernetes/mysql/mysql-secrets.yaml 
     - run: kubectl apply -f kubernetes/mysql/mysql-configmap.yaml 
     - run: kubectl apply -f kubernetes/mysql/mysql-pv.yaml 
