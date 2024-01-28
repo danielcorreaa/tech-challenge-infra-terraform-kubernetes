@@ -18,8 +18,10 @@ jobs:
 
     - name: HashiCorp - Setup Terraform
       uses: hashicorp/setup-terraform@v2.0.3
+
       if: github.ref == 'refs/heads/main'
    # - run: terraform -chdir=env/develop init    
+
    # - run: terraform -chdir=env/develop apply -auto-approve
 
     - name: Kubectl tool installer
@@ -37,6 +39,7 @@ jobs:
     - run: kubectl apply -f kubernetes/mysql/mysql-pv.yaml 
     - run: kubectl apply -f kubernetes/mysql/mysql-service.yaml 
     - run: kubectl apply -f kubernetes/mysql/mysql-statefulset.yaml
+
 
     - run: kubectl apply -f kubernetes/mongo/mongo-secrets.yaml 
     - run: kubectl apply -f kubernetes/mongo/mongo-configmap.yaml 

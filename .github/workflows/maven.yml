@@ -16,10 +16,11 @@ jobs:
      uses: ./.github/workflows/terraform-prod.yml
      secrets: inherit
 
-  #destroy-Dev:   
-    # needs: docker-pull-image 
-    # if: github.ref == 'refs/heads/main'  
-    # uses: destroy/terraform-destroy.yml    
+
+  #destroy-Dev:  
+    
+   #  if: github.ref == 'refs/heads/main'  
+    # uses: ./.github/workflows/terraform-destroy.yml    
     # secrets: inherit
   
 
