@@ -10,10 +10,13 @@ permissions:
   contents: read
 
 jobs:
+
   destroy-Dev:  
      if: github.ref == 'refs/heads/main'  
      uses: ./.github/workflows/terraform-destroy.yml    
      secrets: inherit
+
+
   
 
   
