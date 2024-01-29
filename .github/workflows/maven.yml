@@ -11,9 +11,11 @@ permissions:
 
 jobs:
 
-  destroy-Dev:  
-     if: github.ref == 'refs/heads/main'  
-     uses: ./.github/workflows/terraform-destroy.yml    
+
+
+  EKS-Dev: 
+     if: github.ref == 'refs/heads/main'
+     uses: ./.github/workflows/terraform-prod.yml
      secrets: inherit
 
 
