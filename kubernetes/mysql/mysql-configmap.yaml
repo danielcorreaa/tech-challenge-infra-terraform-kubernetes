@@ -6,5 +6,5 @@ data:
   mysql-server: mysql   # The name of mysql service
   mysql-database-name: techchallenge     # The name of the database used by the demo app
   mysql-user-username: root     # A new created user for the demo app 
-
+  mysql-user: daniel
     
