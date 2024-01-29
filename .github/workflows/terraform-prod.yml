@@ -42,7 +42,7 @@ jobs:
     - run: kubectl apply -f kubernetes/mongo/mongo-pvc.yaml 
     - run: kubectl apply -f kubernetes/mongo/mongo-service.yaml 
     - run: kubectl apply -f kubernetes/mongo/mongo-statefulset.yaml
-    - run: kubectl apply -f kubernetes/mongo/mongo-express-deployment.yaml
+    #- run: kubectl apply -f kubernetes/mongo/mongo-express-deployment.yaml
 
     - run: kubectl apply -f kubernetes/kafka/kafka-configmap.yaml
     - run: kubectl apply -f kubernetes/kafka/zookeeper-deployment.yaml
