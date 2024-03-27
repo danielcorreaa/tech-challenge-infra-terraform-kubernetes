@@ -1,0 +1,17 @@
+proxy:
+  http:
+    # Enable plaintext HTTP listen for the proxy
+    enabled: true
+    servicePort: 8000
+    containerPort: 8000
+admin:
+    enabled: true
+    type: LoadBalancer 
+    http:
+      enabled: true
+env:
+  database: postgres  
+  pg_host: postgres 
+  pg_user: kong 
+  pg_password: kong 
+  pg_database: kong

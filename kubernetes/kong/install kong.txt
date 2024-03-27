@@ -1,0 +1,1 @@
+ helm install kong kong/kong --values values.yaml
