@@ -54,7 +54,9 @@ jobs:
     - run: kubectl apply -f kubernetes/kong/postgres/postgres-config.yaml
     - run: kubectl apply -f kubernetes/kong/postgres/postgres-pvc.yaml
     - run: kubectl apply -f kubernetes/kong/postgres/statefulset.yaml
-
+    
+    - run: helm repo add kong https://charts.konghq.com
+    - run: helm repo update
     - run: helm install kong kong/kong --values kubernetes/kong/values.yaml
 
 
