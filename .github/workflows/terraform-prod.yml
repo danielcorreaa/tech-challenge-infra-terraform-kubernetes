@@ -51,9 +51,9 @@ jobs:
     - run: kubectl apply -f kubernetes/kafka/kafka-service.yaml
     - run: kubectl apply -f kubernetes/kafka/kafka-ui-deployment.yaml
 
-    - run: kubectl apply -f kubernetes/postgres/postgres-config.yaml
-    - run: kubectl apply -f kubernetes/postgres/postgres-pvc.yaml
-    - run: kubectl apply -f kubernetes/postgres/statefulset.yaml
+    - run: kubectl apply -f kubernetes/kong/postgres/postgres-config.yaml
+    - run: kubectl apply -f kubernetes/kong/postgres/postgres-pvc.yaml
+    - run: kubectl apply -f kubernetes/kong/postgres/statefulset.yaml
 
     - run: helm install kong kong/kong --values kubernetes/kong/values.yaml
 
