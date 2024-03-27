@@ -26,17 +26,12 @@ spec:
             - name: POSTGRES_PASSWORD
               value: kong
           volumeMounts:
-            - name: postgres-storage
+            - name: postgres-persistent-storage
               mountPath: /var/lib/postgresql/data
-  volumeClaimTemplates:
-    - metadata:
-        name: postgres-storage
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 10Gi  # Match the size with the PersistentVolumeClaim
+      volumes:
+        - name: postgres-persistent-storage
+          persistentVolumeClaim:
+            claimName: postgres-pvc
 
 ---
 apiVersion: v1
